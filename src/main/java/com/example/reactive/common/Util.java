@@ -1,6 +1,7 @@
 package com.example.reactive.common;
 
 import com.github.javafaker.Faker;
+import org.reactivestreams.Subscriber;
 
 import java.util.function.Consumer;
 
@@ -30,5 +31,11 @@ public class Util {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public static Subscriber subscriber() {
+        return new DefaultSubscriber();
+    }
+    public static Subscriber subscriber(String name){
+        return new DefaultSubscriber(name);
     }
 }
